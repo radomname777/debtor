@@ -162,18 +162,8 @@ namespace MyApp
             //task 16
             //debtors.Where(s => s.BirthDay.Year <= 1939).ToList().Print();
             // task 18
-            //bool isokay = true;
-            //foreach (var item in debtors)
-            //{
-            //    isokay = true;
-            //    foreach (var item2 in item.Phone)
-            //    {
-            //        if (item2 == '-') continue;
-            //        if ((item.Phone.Count(s => s == item2)) != 1) { isokay = false; break; }
-            //    }
-            //    if (isokay) Console.WriteLine(item);
-            //}
-            //debtors.Where(s => s.Phone.stringfoar(0,'-',2)).ToList().Print();
+            //debtors.Where(s => s.Phone.stringfoar(0,'-',2)).ToList().Print(); 
+            // tekrar reqemi olmayani  ozum yazdim
             //taks 19
             //debtors.Where(s => s.Debt - ((DateTime.Now.Month<s.BirthDay.Month)? DateTime.Now.Month - s.BirthDay.Month : s.BirthDay.Month-DateTime.Now.Month * 500) <= 0).ToList().Print();
             //debtors.Where(s => s.Debt - ((DateTime.Now.Month < s.BirthDay.Month) ? (DateTime.Now.Month - s.BirthDay.Month) : (0 - (DateTime.Now.Month - (s.BirthDay.Month + 12))) * 500) <= 0)
