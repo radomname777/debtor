@@ -8,6 +8,29 @@ namespace MyApp
         public static void Print(this List<Program.Debtor> debtor)
             => debtor.ForEach(s => Console.WriteLine(s));
 
+        public static bool stringfoar(this string str,int count, char ctr = (char)1,int num =0)
+        {
+            bool isokay = false;
+            foreach (var item in str)
+            {
+
+                if (item == ctr) {
+                    continue;
+                }
+                else if (str.Count(s => s == item) > count&& ctr==1|| str.Count(s => s == item) < num)
+                {
+                    if (ctr == 1) return true;
+                     isokay = true;
+                }
+                else
+                {
+                    if (ctr != 1) return false;
+                    isokay = false;
+                }
+               
+            }
+            return isokay;
+        }
     }
     class Program
     {
@@ -115,16 +138,10 @@ namespace MyApp
             //debtors.Where(s => (s.Phone.Count(ss => ss == '8') <= 0))
             //    .ToList()
             //    .ForEach(s => Console.WriteLine($"Surname: {s.FullName.Split(" ")[2]} Age: {DateTime.Now.Year-s.BirthDay.Year} Debt: {s.Debt}"));
-            //task 10
+            //task 11
             /////////////////////////////////////
-            //foreach (var item in debtors)
-            //{
-            //    foreach (var item2 in item.FullName)
-            //    {
-            //        if ((item.FullName.Count(s => s == item2)) > 2) { Console.WriteLine(item);break; }
-            //        else continue;
-            //    }
-            //}
+
+           // debtors.Where(s=> s.FullName.stringfoar(2)).ToList().Print();
             //task 13
 
             //int number = 0,datetime=0;
@@ -156,6 +173,7 @@ namespace MyApp
             //    }
             //    if (isokay) Console.WriteLine(item);
             //}
+            //debtors.Where(s => s.Phone.stringfoar(0,'-',2)).ToList().Print();
             //taks 19
             //debtors.Where(s => s.Debt - ((DateTime.Now.Month<s.BirthDay.Month)? DateTime.Now.Month - s.BirthDay.Month : s.BirthDay.Month-DateTime.Now.Month * 500) <= 0).ToList().Print();
             //debtors.Where(s => s.Debt - ((DateTime.Now.Month < s.BirthDay.Month) ? (DateTime.Now.Month - s.BirthDay.Month) : (0 - (DateTime.Now.Month - (s.BirthDay.Month + 12))) * 500) <= 0)
